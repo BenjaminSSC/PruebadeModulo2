@@ -95,7 +95,7 @@ section {
   margin-bottom: 20px;
 }
 
-section h2{
+section h2 {
   animation-name: titl;
   animation-duration: 3s;
   animation-direction: alternate;
@@ -109,6 +109,7 @@ section h2{
 
 .gallery-item {
   overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 
 }
 
@@ -116,11 +117,49 @@ section h2{
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.3s ease;
 }
 
 .gallery-item:hover {
-  animation: images 0.3s forwards;
+  transform: scale(1.2);
+}
+
+#contact {
+  background-color: var(--secondary-bg-color);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact form {
+  display: grid;
+  width: 94%;
+  gap: 10px;
+}
+
+#contact label {
+  font-weight: bold;
+}
+
+#contact input, #contact textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+}
+
+#contact button {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#contact button:hover {
+  background-color: var(--secondary-color);
 }
 
 footer {
@@ -137,21 +176,12 @@ footer .social-media {
 footer .social-media a {
   color: var(--primary-color);
   margin: 0 10px;
-  font-size: 20px;
+  font-size: 50px;
   text-decoration: none;
 }
 
 footer .social-media a:hover {
   color: var(--secondary-color);
-}
-
-@keyframes images{
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.2);
-    }
 }
 
 @keyframes titl{
@@ -215,6 +245,10 @@ footer .social-media a:hover {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+  }
+
+  #contact form {
+    width: 98%;
   }
 }
 
